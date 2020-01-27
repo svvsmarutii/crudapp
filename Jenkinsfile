@@ -23,7 +23,7 @@ pipeline {
            steps {
 		   sh label: '', script: '''#!/bin/bash 
               /usr/bin/expect <<EOD
-              spawn scp ${WORKSPACE}/target/crudApp.war root@172.30.102.151:/opt/maruthi/tomcat/dev/webapps
+              spawn scp ${WORKSPACE}/target/crudApp.war root@172.30.102.151:/opt/maruthi/tomcat/val/webapps
               expect "password:"
               send "root1234\\r"
               expect {
