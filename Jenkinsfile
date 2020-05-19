@@ -1,6 +1,7 @@
 node('slave'){
     stage('codeFetch') {
         container('jenkins-slave'){
+            jobname = sh(returnStdout: true,script:"echo \${JOB_URL} |  rev | cut -d'/' -f 4 | rev").toString().trim()
             git branch: env.BRANCH_NAME, credentialsId: 'githubcredmaru', url: 'https://github.com/svvsmarutii/crudapp.git'
             container('maven') {
                 stage('Build') {
