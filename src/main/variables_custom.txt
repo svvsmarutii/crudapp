@@ -1,0 +1,3 @@
+riskApiGateway = ${ll_aws_agw_risk}
+subscriptionApiGateway = ${ll_aws_agw_subscription}
+userApiGateway = ${ll_aws_agw_user}
